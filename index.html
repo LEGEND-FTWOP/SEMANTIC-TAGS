@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Portfolio Website | Alex Rivera</title>
+    <meta name="description"
+        content="This is my first personal portfolio website created using HTML5 semantic tags, accessible forms, and clean markup.">
+    <meta name="keywords"
+        content="portfolio, student portfolio, first web page, HTML5, semantic HTML, web accessibility, WCAG">
+    <meta name="author" content="Alex Rivera">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+</head>
+
+<body id="top">
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="header">
+        <div class="header-content">
+            <h1>My Personal Portfolio</h1>
+            <p>Welcome to my first web page! Built with semantic HTML5.</p>
+
+            <nav class="navbar" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <hr>
+
+    <main id="main-content">
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>This is my first page! Hello, my name is <strong>NEW</strong> and I am learning web development.</p>
+                <p>
+                    I am practicing how to write clean, semantic <abbr title="HyperText Markup Language 5">HTML5</abbr>
+                    so that web pages are structured properly for search engines and people using screen readers. You
+                    can learn more about web standards by visiting the <a href="https://developer.mozilla.org"
+                        target="_blank" rel="noopener noreferrer">Mozilla Developer Network (MDN)</a>.
+                </p>
+                <p>When I am not coding, I enjoy learning about computer hardware, reading tech blogs, and practicing
+                    accessibility guidelines.</p>
+
+                <div class="image-box">
+                    <figure>
+                        <a href="https://static.vecteezy.com/system/resources/previews/069/041/659/non_2x/woman-working-on-laptop-sitting-on-office-chair-at-desk-in-casual-clothing-illustration-vector.jpg"
+                            target="_blank" rel="noopener noreferrer"
+                            aria-label="View full size image of woman working on laptop (opens in a new tab)">
+                            <img src="https://static.vecteezy.com/system/resources/previews/069/041/659/non_2x/woman-working-on-laptop-sitting-on-office-chair-at-desk-in-casual-clothing-illustration-vector.jpg"
+                                alt="Illustration of a woman sitting on an office chair and working on a laptop at a desk in casual clothing"
+                                width="489" height="627" class="desk-image">
+                        </a>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2>My Projects</h2>
+                <p>Here are some projects and practice exercises I have been working on:</p>
+
+                <article class="project-card">
+                    <h3>Project 1: HTML5 Semantic Skeleton</h3>
+                    <p>A simple personal portfolio website created using only semantic HTML elements without any CSS
+                        frameworks.</p>
+                    <p><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="View Project 1 source code on GitHub (opens in a new tab)">View on GitHub
+                            &rarr;</a></p>
+                </article>
+
+                <article class="project-card">
+                    <h3>Project 2: Accessible Recipe Card</h3>
+                    <p>A food recipe webpage built using semantic tables, ingredient lists, step-by-step instructions,
+                        and accessible keyboard focus.</p>
+                    <p><a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                            aria-label="View Project 2 source code on GitHub (opens in a new tab)">View on GitHub
+                            &rarr;</a></p>
+                </article>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2>Skills</h2>
+                <p>Technologies and concepts I am currently learning and practicing:</p>
+
+                <ul>
+                    <li>HTML5 Semantic Structure &amp; Web Standards</li>
+                    <li>Web Accessibility (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1)</li>
+                    <li>Accessible Forms &amp; Keyboard Navigation</li>
+                    <li>CSS Fundamentals &amp; Responsive Layouts</li>
+                    <li>Git &amp; GitHub Version Control</li>
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <aside class="sidebar-aside">
+            <div class="container">
+                <h3>Current Focus &amp; Goals</h3>
+                <p>I am actively seeking web development internship opportunities and looking to collaborate on open-source projects. Always excited to build clean, accessible web experiences!</p>
+            </div>
+        </aside>
+
+        <hr>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>Feel free to leave me a message using this accessible, tab-navigable form. Fields marked with an
+                    asterisk (<abbr title="required" aria-label="required">*</abbr>) are required.</p>
+
+                <form action="#" method="post" class="contact-form">
+                    <fieldset>
+                        <legend><strong>Send a Message</strong></legend>
+
+                        <div class="form-group">
+                            <label for="user-name">Your Name: <abbr title="required"
+                                    aria-label="required">*</abbr></label><br>
+                            <input type="text" id="user-name" name="name" autocomplete="name" required
+                                aria-required="true" aria-describedby="name-help"><br>
+                            <small id="name-help">Please enter your name.</small>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="user-email">Your Email: <abbr title="required"
+                                    aria-label="required">*</abbr></label><br>
+                            <input type="email" id="user-email" name="email" autocomplete="email" required
+                                aria-required="true" aria-describedby="email-help"><br>
+                            <small id="email-help">Enter your email address so I can reply back.</small>
+                        </div>
+
+                        <br>
+
+                        <div class="form-group">
+                            <label for="user-message">Your Message: <abbr title="required"
+                                    aria-label="required">*</abbr></label><br>
+                            <textarea id="user-message" name="message" rows="5" cols="40"
+                                placeholder="Write your message here..." required aria-required="true"
+                                aria-describedby="message-help"></textarea><br>
+                            <small id="message-help">Write your message or project note here.</small>
+                        </div>
+
+                        <br>
+
+                        <div class="form-actions">
+                            <button type="submit">Send Message</button>
+                            <button type="reset">Clear</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <time datetime="2026">2026</time> Alex Rivera &bull; My First Portfolio Website.</p>
+
+            <address>
+                <p>
+                    Email: <a href="mailto:alex.rivera@example.com">alex.rivera@example.com</a><br>
+                    Location: San Francisco, California
+                </p>
+            </address>
+
+            <p><a href="#top">Back to top of page &uarr;</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
