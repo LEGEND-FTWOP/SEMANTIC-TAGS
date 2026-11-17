@@ -1,194 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Portfolio Website | Alex Rivera</title>
-    <meta name="description"
-        content="This is my first personal portfolio website created using HTML5 semantic tags, accessible forms, and clean markup.">
-    <meta name="keywords"
-        content="portfolio, student portfolio, first web page, HTML5, semantic HTML, web accessibility, WCAG">
+
+    <title>Alex Rivera | Front-End Developer &amp; Accessibility Specialist</title>
+    <meta name="description" content="Personal portfolio and interactive task manager by Alex Rivera. Showcasing semantic HTML5, responsive CSS3 Grid &amp; Flexbox, and vanilla JavaScript state management.">
+    <meta name="keywords" content="Alex Rivera, front-end developer portfolio, accessible web design, semantic HTML5, responsive CSS3, vanilla javascript todo list">
     <meta name="author" content="Alex Rivera">
     <meta name="robots" content="index, follow">
-    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-</head>
 
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Alex Rivera | Front-End Developer &amp; Accessibility Specialist">
+    <meta property="og:description" content="Personal portfolio and interactive task manager built with semantic HTML5, responsive CSS3, and vanilla JavaScript.">
+    <meta property="og:image" content="assets/images/og-cover.svg">
+    <meta property="og:site_name" content="Alex Rivera Portfolio">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alex Rivera | Front-End Developer &amp; Accessibility Specialist">
+    <meta name="twitter:description" content="Personal portfolio and interactive task manager built with semantic HTML5, responsive CSS3, and vanilla JavaScript.">
+    <meta name="twitter:image" content="assets/images/og-cover.svg">
+
+    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
 <body id="top">
 
+    <!-- Accessible Skip Link -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="header">
-        <div class="header-content">
-            <h1>My Personal Portfolio</h1>
-            <p>Welcome to my first web page! Built with semantic HTML5.</p>
+    <!-- Sticky Navigation Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <div class="brand">
+                <a href="#top" class="logo">Alex Rivera</a>
+                <span class="tagline">Front-End &amp; a11y</span>
+            </div>
 
-            <nav class="navbar" aria-label="Main Navigation">
-                <ul>
-                    <li><a href="#about">About Me</a></li>
+            <nav aria-label="Primary Navigation">
+                <ul class="nav-links">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#todo" class="nav-highlight">To-Do App</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+
+            <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle theme">
+                <span class="theme-icon" aria-hidden="true">🌙</span>
+            </button>
         </div>
     </header>
 
-    <hr>
+    <main id="main-content" class="page-container">
 
-    <main id="main-content">
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>This is my first page! Hello, my name is <strong>NEW</strong> and I am learning web development.</p>
-                <p>
-                    I am practicing how to write clean, semantic <abbr title="HyperText Markup Language 5">HTML5</abbr>
-                    so that web pages are structured properly for search engines and people using screen readers. You
-                    can learn more about web standards by visiting the <a href="https://developer.mozilla.org"
-                        target="_blank" rel="noopener noreferrer">Mozilla Developer Network (MDN)</a>.
+        <!-- 1. Hero Section -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <span class="status-badge">&bull; Open to New Opportunities</span>
+                <h1 id="hero-title">Crafting fast, accessible, and responsive web experiences.</h1>
+                <p class="hero-intro">
+                    Hi, I'm Alex Rivera. I build modern websites using pure semantic HTML5, fluid CSS3 Grid &amp; Flexbox architectures, and WCAG-compliant design principles. No bloated libraries—just clean, performant code that works smoothly across every device.
                 </p>
-                <p>When I am not coding, I enjoy learning about computer hardware, reading tech blogs, and practicing
-                    accessibility guidelines.</p>
-
-                <div class="image-box">
-                    <figure>
-                        <a href="https://static.vecteezy.com/system/resources/previews/069/041/659/non_2x/woman-working-on-laptop-sitting-on-office-chair-at-desk-in-casual-clothing-illustration-vector.jpg"
-                            target="_blank" rel="noopener noreferrer"
-                            aria-label="View full size image of woman working on laptop (opens in a new tab)">
-                            <img src="https://static.vecteezy.com/system/resources/previews/069/041/659/non_2x/woman-working-on-laptop-sitting-on-office-chair-at-desk-in-casual-clothing-illustration-vector.jpg"
-                                alt="Illustration of a woman sitting on an office chair and working on a laptop at a desk in casual clothing"
-                                width="489" height="627" class="desk-image">
-                        </a>
-                    </figure>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn btn-primary">View Projects &rarr;</a>
+                    <a href="#todo" class="btn btn-accent">Try To-Do App</a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                 </div>
             </div>
+
+            <figure class="hero-figure">
+                <img src="images.jpg" alt="Alex Rivera working on a modern laptop at a tidy desk" class="hero-image" width="560" height="375" loading="eager">
+                <figcaption>Designing accessible architectures from the ground up.</figcaption>
+            </figure>
         </section>
 
-        <hr>
+        <!-- 2. Core Engineering Pillars -->
+        <section class="features-section" aria-labelledby="features-title">
+            <div class="section-header">
+                <h2 id="features-title">Core Engineering Pillars</h2>
+                <p>Modern web development founded on longevity, performance, and universal usability.</p>
+            </div>
 
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <h2>My Projects</h2>
-                <p>Here are some projects and practice exercises I have been working on:</p>
-
-                <article class="project-card">
-                    <h3>Project 1: HTML5 Semantic Skeleton</h3>
-                    <p>A simple personal portfolio website created using only semantic HTML elements without any CSS
-                        frameworks.</p>
-                    <p><a href="https://github.com" target="_blank" rel="noopener noreferrer"
-                            aria-label="View Project 1 source code on GitHub (opens in a new tab)">View on GitHub
-                            &rarr;</a></p>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="card-icon" aria-hidden="true">🏗️</div>
+                    <h3>Semantic HTML5</h3>
+                    <p>
+                        Structured with native landmarks, descriptive tags, and clean hierarchies that provide assistive tech with natural screen reader navigation.
+                    </p>
                 </article>
 
-                <article class="project-card">
-                    <h3>Project 2: Accessible Recipe Card</h3>
-                    <p>A food recipe webpage built using semantic tables, ingredient lists, step-by-step instructions,
-                        and accessible keyboard focus.</p>
-                    <p><a href="https://github.com" target="_blank" rel="noopener noreferrer"
-                            aria-label="View Project 2 source code on GitHub (opens in a new tab)">View on GitHub
-                            &rarr;</a></p>
+                <article class="feature-card">
+                    <div class="card-icon" aria-hidden="true">📐</div>
+                    <h3>Responsive CSS3 Architecture</h3>
+                    <p>
+                        Engineered with CSS Grid and Flexbox using fluid units and custom variables. Flawless transitions between mobile, tablet, and widescreen.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="card-icon" aria-hidden="true">♿</div>
+                    <h3>Accessibility (WCAG 2.1)</h3>
+                    <p>
+                        High contrast ratios, complete keyboard navigability, clear focus indicators, and aria-landmarks for genuine universal inclusion.
+                    </p>
                 </article>
             </div>
         </section>
 
-        <hr>
+        <!-- 3. About Section -->
+        <section id="about" class="content-section" aria-labelledby="about-heading">
+            <div class="section-header">
+                <h2 id="about-heading">About Me</h2>
+                <p>Background, Core Values &amp; Technical Competencies</p>
+            </div>
 
-        <section id="skills" class="skills-section">
-            <div class="container">
-                <h2>Skills</h2>
-                <p>Technologies and concepts I am currently learning and practicing:</p>
+            <!-- Biography -->
+            <article class="bio-article">
+                <h3>My Background</h3>
+                <p>
+                    I am a front-end web developer with over 5 years of experience crafting accessible, performance-oriented websites. My journey began when I noticed how often standard web interfaces fail users who rely on assistive technologies like screen readers, speech-recognition software, or keyboard-only navigation.
+                </p>
+                <p>
+                    Rather than treating accessibility as a cosmetic patch or an afterthought, I center every project around native 
+                    <abbr title="HyperText Markup Language 5">HTML5</abbr> semantics. Clean, valid markup naturally provides screen readers with navigational landmarks, heading structures, and predictable tab orders.
+                </p>
+            </article>
 
-                <ul>
-                    <li>HTML5 Semantic Structure &amp; Web Standards</li>
-                    <li>Web Accessibility (<abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1)</li>
-                    <li>Accessible Forms &amp; Keyboard Navigation</li>
-                    <li>CSS Fundamentals &amp; Responsive Layouts</li>
-                    <li>Git &amp; GitHub Version Control</li>
-                </ul>
+            <!-- Technical Skills Matrix Table -->
+            <div class="skills-block">
+                <h3>Technical Competencies Matrix</h3>
+                <p>A summary of my core skill sets, tools, and accessibility standards compliance:</p>
+
+                <div class="table-wrapper">
+                    <table class="data-table">
+                        <caption><strong>Technical Skills and Standards Matrix</strong></caption>
+                        <thead>
+                            <tr>
+                                <th scope="col">Domain</th>
+                                <th scope="col">Technologies &amp; Tools</th>
+                                <th scope="col">Accessibility &amp; Industry Standards</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">Markup &amp; Semantics</th>
+                                <td>HTML5, XHTML, XML, SVG</td>
+                                <td>W3C HTML5 Specification, WHATWG Standards</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Styling &amp; Layout</th>
+                                <td>CSS3, CSS Grid, Flexbox, CSS Variables</td>
+                                <td>Mobile-First Architecture, Responsive Design</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Client-Side Logic</th>
+                                <td>JavaScript (ES6+), DOM APIs, localStorage</td>
+                                <td>State-Driven Architecture, Event Delegation</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Accessibility (a11y)</th>
+                                <td>WAI-ARIA 1.2, Screen Readers (NVDA, VoiceOver)</td>
+                                <td>WCAG 2.1 Level AA &amp; AAA, Section 508</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Code Quality &amp; Auditing</th>
+                                <td>axe-core, WAVE Web Accessibility Evaluation Tool</td>
+                                <td>Zero Critical Violations, 100% Keyboard Trappable-free</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Career Milestones Timeline -->
+            <div class="timeline-block">
+                <h3>Experience &amp; Career Milestones</h3>
+                <ol class="timeline-list">
+                    <li class="timeline-item">
+                        <article class="timeline-card">
+                            <h4>Lead Front-End &amp; Accessibility Specialist &mdash; Inclusive Web Labs</h4>
+                            <p class="timeline-date"><time datetime="2024-01">January 2024</time> &ndash; Present</p>
+                            <p>
+                                Architected internal accessible component guidelines and conducted comprehensive <abbr title="Web Content Accessibility Guidelines">WCAG</abbr> audits across client applications, resolving over 250 accessibility barriers.
+                            </p>
+                        </article>
+                    </li>
+                    <li class="timeline-item">
+                        <article class="timeline-card">
+                            <h4>Front-End Web Developer &mdash; Horizon Digital</h4>
+                            <p class="timeline-date"><time datetime="2021-06">June 2021</time> &ndash; <time datetime="2023-12">December 2023</time></p>
+                            <p>
+                                Developed responsive marketing portals and internal tools, championing strict semantic HTML markup and achieving perfect 100 Lighthouse accessibility scores across all launched properties.
+                            </p>
+                        </article>
+                    </li>
+                    <li class="timeline-item">
+                        <article class="timeline-card">
+                            <h4>Junior Web Developer &mdash; BrightPixel Studio</h4>
+                            <p class="timeline-date"><time datetime="2019-09">September 2019</time> &ndash; <time datetime="2021-05">May 2021</time></p>
+                            <p>
+                                Built and maintained client websites, converted legacy <code>&lt;div&gt;</code> soup layouts into clean modern HTML5 semantic elements, and established testing protocols for keyboard navigation.
+                            </p>
+                        </article>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- Core Principles & Credentials -->
+            <aside class="sidebar-box" aria-labelledby="principles-heading">
+                <h3 id="principles-heading">Core Engineering Principles</h3>
+                <dl class="principles-list">
+                    <dt><strong>1. Semantics First</strong></dt>
+                    <dd>Always prefer native HTML elements over generic containers paired with ARIA overrides.</dd>
+
+                    <dt><strong>2. Progressive Enhancement</strong></dt>
+                    <dd>Ensure core content and functional forms work reliably on all browsers and devices without prerequisites.</dd>
+
+                    <dt><strong>3. Empathetic Design</strong></dt>
+                    <dd>Test workflows with real keyboard-only input and screen readers to understand the real human experience.</dd>
+                </dl>
+
+                <details class="credentials-details">
+                    <summary>Click to view formal education &amp; certifications</summary>
+                    <ul class="credentials-list">
+                        <li><strong>Bachelor of Science in Computer Science</strong> &mdash; State University (<time datetime="2019">2019</time>)</li>
+                        <li><strong>Certified Professional in Accessibility Core Competencies (<abbr title="Certified Professional in Accessibility Core Competencies">CPACC</abbr>)</strong> &mdash; IAAP</li>
+                        <li><strong>W3C Web Accessibility Introduction</strong> &mdash; Course Certificate</li>
+                    </ul>
+                </details>
+            </aside>
+        </section>
+
+        <!-- 4. Projects Showcase Section -->
+        <section id="projects" class="projects-section" aria-labelledby="projects-heading">
+            <div class="section-header">
+                <h2 id="projects-heading">Selected Engineering Projects</h2>
+                <p>Demonstrating Accessible Architecture, CSS3 Layouts &amp; Semantic HTML5</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card">
+                    <figure class="card-media">
+                        <img src="assets/images/project-1.svg" alt="Preview of Accessible UI Component Kit interface with keyboard focus indicators" width="400" height="250" loading="lazy">
+                    </figure>
+                    <div class="card-body">
+                        <span class="card-tag">Design System</span>
+                        <h3>1. Accessible UI Component Kit</h3>
+                        <p>
+                            A collection of reusable, unstyled user interface components engineered strictly against the W3C WAI-ARIA Authoring Practices Guide (APG) featuring modal dialogs, tab panels, and keyboard focus trapping.
+                        </p>
+                        <ul class="feature-bullets">
+                            <li><strong>Focus Trapping:</strong> Prevents focus escape in dialogs.</li>
+                            <li><strong>Focus Restoration:</strong> Returns focus to trigger on close.</li>
+                            <li><strong>Roving Tabindex:</strong> Keyboard arrow navigation.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 2 -->
+                <article class="project-card">
+                    <figure class="card-media">
+                        <img src="assets/images/project-2.svg" alt="Preview of EcoMetrics analytics dashboard showing carbon score and Core Web Vitals" width="400" height="250" loading="lazy">
+                    </figure>
+                    <div class="card-body">
+                        <span class="card-tag">Web Performance</span>
+                        <h3>2. EcoMetrics &mdash; Green Web Audit</h3>
+                        <p>
+                            A lightweight benchmarking tool analyzing page payload, server carbon emissions, and Core Web Vitals with high-contrast accessibility-compliant data visualizations.
+                        </p>
+                        <ul class="feature-bullets">
+                            <li><strong>Data Tables:</strong> Backed by semantic <code>&lt;table&gt;</code> markup.</li>
+                            <li><strong>High Contrast:</strong> Contrast ratio exceeding 9:1.</li>
+                            <li><strong>Motion Safety:</strong> Respects reduced motion preferences.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Project 3 -->
+                <article class="project-card">
+                    <figure class="card-media">
+                        <img src="assets/images/project-3.svg" alt="Preview of DevFlow keyboard navigation documentation engine" width="400" height="250" loading="lazy">
+                    </figure>
+                    <div class="card-body">
+                        <span class="card-tag">Developer Tools</span>
+                        <h3>3. DevFlow &mdash; Documentation Engine</h3>
+                        <p>
+                            Static documentation interface built for keyboard power users, with automatic heading hierarchies, in-page landmark skips, and semantic <code>&lt;kbd&gt;</code> shortcuts.
+                        </p>
+                        <ul class="feature-bullets">
+                            <li><strong>Logical Hierarchy:</strong> Unbroken <code>&lt;h1&gt;</code> &rarr; <code>&lt;h3&gt;</code> tree.</li>
+                            <li><strong>Keyboard Shortcuts:</strong> <kbd>J</kbd> / <kbd>K</kbd> section cycling.</li>
+                            <li><strong>Skip Anchors:</strong> Quick jump to code examples.</li>
+                        </ul>
+                    </div>
+                </article>
             </div>
         </section>
 
-        <hr>
-
-        <aside class="sidebar-aside">
-            <div class="container">
-                <h3>Current Focus &amp; Goals</h3>
-                <p>I am actively seeking web development internship opportunities and looking to collaborate on open-source projects. Always excited to build clean, accessible web experiences!</p>
+        <!-- 5. Interactive To-Do List Application Section -->
+        <section id="todo" class="content-section" aria-labelledby="todo-section-heading">
+            <div class="section-header">
+                <span class="card-tag">JavaScript &amp; State Management</span>
+                <h2 id="todo-section-heading">Interactive Task Manager</h2>
+                <p>Pure client-side state manipulation, localStorage persistence &amp; event delegation.</p>
             </div>
-        </aside>
 
-        <hr>
+            <div class="todo-page-wrapper">
+                <!-- Main Task Card -->
+                <div class="todo-card" aria-label="Task Management Tool">
+                    <!-- Task Input Form -->
+                    <form id="task-form" class="task-form">
+                        <input 
+                            type="text" 
+                            id="task-input" 
+                            class="task-input" 
+                            placeholder="What needs to be accomplished today?" 
+                            autocomplete="off"
+                            required 
+                            aria-label="New task description">
+                        <button type="submit" class="btn-add" aria-label="Add task">
+                            <span>Add Task</span>
+                        </button>
+                    </form>
 
-        <section id="contact" class="contact-section">
-            <div class="container">
-                <h2>Contact Me</h2>
-                <p>Feel free to leave me a message using this accessible, tab-navigable form. Fields marked with an
-                    asterisk (<abbr title="required" aria-label="required">*</abbr>) are required.</p>
+                    <!-- Dynamic List -->
+                    <ul id="task-list" class="task-list" aria-live="polite">
+                        <!-- Dynamic items generated by script.js -->
+                    </ul>
 
-                <form action="#" method="post" class="contact-form">
-                    <fieldset>
-                        <legend><strong>Send a Message</strong></legend>
+                    <!-- Empty State -->
+                    <div id="empty-state-message" class="empty-state" style="display: none;">
+                        No tasks on your list! Add one above.
+                    </div>
 
-                        <div class="form-group">
-                            <label for="user-name">Your Name: <abbr title="required"
-                                    aria-label="required">*</abbr></label><br>
-                            <input type="text" id="user-name" name="name" autocomplete="name" required
-                                aria-required="true" aria-describedby="name-help"><br>
-                            <small id="name-help">Please enter your name.</small>
-                        </div>
+                    <!-- Toolbar & Filters -->
+                    <footer class="todo-toolbar">
+                        <span id="items-left-count" class="items-left" aria-live="polite">0 items left</span>
 
-                        <br>
+                        <nav class="filters-group" aria-label="Task filtering options">
+                            <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+                            <button type="button" class="filter-btn" data-filter="active" aria-pressed="false">Active</button>
+                            <button type="button" class="filter-btn" data-filter="completed" aria-pressed="false">Completed</button>
+                        </nav>
 
-                        <div class="form-group">
-                            <label for="user-email">Your Email: <abbr title="required"
-                                    aria-label="required">*</abbr></label><br>
-                            <input type="email" id="user-email" name="email" autocomplete="email" required
-                                aria-required="true" aria-describedby="email-help"><br>
-                            <small id="email-help">Enter your email address so I can reply back.</small>
-                        </div>
+                        <button type="button" id="clear-completed-btn" class="btn-clear" style="visibility: hidden;">
+                            Clear completed
+                        </button>
+                    </footer>
+                </div>
 
-                        <br>
+                <!-- Shortcuts / Viva Card -->
+                <aside class="instructions-card" aria-label="Task Manager Features">
+                    <h3>Technical Highlights &amp; Shortcuts</h3>
+                    <ul>
+                        <li><strong>Create:</strong> Type your task and press <kbd>Enter</kbd> or click <em>Add Task</em>.</li>
+                        <li><strong>Complete:</strong> Click any checkbox to toggle completion state.</li>
+                        <li><strong>Edit Inline:</strong> Double-click any task title to edit it inline (<kbd>Enter</kbd> to save, <kbd>Esc</kbd> to cancel).</li>
+                        <li><strong>Delete:</strong> Click the 🗑️ trash icon to delete, or click <em>Clear completed</em>.</li>
+                        <li><strong>LocalStorage:</strong> All tasks automatically persist across page reloads using <code>window.localStorage</code>.</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
 
-                        <div class="form-group">
-                            <label for="user-message">Your Message: <abbr title="required"
-                                    aria-label="required">*</abbr></label><br>
-                            <textarea id="user-message" name="message" rows="5" cols="40"
-                                placeholder="Write your message here..." required aria-required="true"
-                                aria-describedby="message-help"></textarea><br>
-                            <small id="message-help">Write your message or project note here.</small>
-                        </div>
+        <!-- 6. Contact Section -->
+        <section id="contact" class="content-section" aria-labelledby="contact-heading">
+            <div class="section-header">
+                <h2 id="contact-heading">Get in Touch</h2>
+                <p>Have a project proposal, need an accessibility audit, or want to connect? Send a message below.</p>
+            </div>
 
-                        <br>
+            <div class="contact-grid">
+                <!-- Form Container -->
+                <div class="form-container">
+                    <form action="#" method="post" aria-label="Contact Inquiries Form" class="accessible-form">
+                        
+                        <!-- Details Fieldset -->
+                        <fieldset class="form-fieldset">
+                            <legend class="fieldset-legend">1. Your Contact Details</legend>
 
+                            <div class="form-group">
+                                <label for="full-name" class="form-label">
+                                    Full Name: <abbr title="required" class="required-mark" aria-label="required">*</abbr>
+                                </label>
+                                <input 
+                                    type="text" 
+                                    id="full-name" 
+                                    name="name" 
+                                    class="form-input"
+                                    autocomplete="name" 
+                                    required 
+                                    aria-required="true" 
+                                    aria-describedby="name-help">
+                                <small id="name-help" class="form-help">Enter your name or company name.</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email-address" class="form-label">
+                                    Email Address: <abbr title="required" class="required-mark" aria-label="required">*</abbr>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email-address" 
+                                    name="email" 
+                                    class="form-input"
+                                    autocomplete="email" 
+                                    required 
+                                    aria-required="true" 
+                                    aria-describedby="email-help">
+                                <small id="email-help" class="form-help">Example: name@domain.com</small>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone-number" class="form-label">
+                                    Phone Number (optional):
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="phone-number" 
+                                    name="phone" 
+                                    class="form-input"
+                                    autocomplete="tel" 
+                                    aria-describedby="phone-help">
+                                <small id="phone-help" class="form-help">Include country code if outside the US.</small>
+                            </div>
+                        </fieldset>
+
+                        <!-- Project Information Fieldset -->
+                        <fieldset class="form-fieldset">
+                            <legend class="fieldset-legend">2. Project Information</legend>
+
+                            <div class="form-group">
+                                <label for="inquiry-type" class="form-label">
+                                    Reason for Inquiry: <abbr title="required" class="required-mark" aria-label="required">*</abbr>
+                                </label>
+                                <select 
+                                    id="inquiry-type" 
+                                    name="inquiry_type" 
+                                    class="form-select"
+                                    required 
+                                    aria-required="true">
+                                    <option value="" disabled selected>-- Select an option --</option>
+                                    <option value="audit">Accessibility Audit &amp; WCAG Assessment</option>
+                                    <option value="frontend">Front-End Engineering Contract</option>
+                                    <option value="design-system">Accessible Design System Consulting</option>
+                                    <option value="mentorship">Team Workshop / Training</option>
+                                    <option value="other">General Question</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-message" class="form-label">
+                                    Message &amp; Project Scope: <abbr title="required" class="required-mark" aria-label="required">*</abbr>
+                                </label>
+                                <textarea 
+                                    id="project-message" 
+                                    name="message" 
+                                    class="form-textarea"
+                                    rows="5" 
+                                    required 
+                                    aria-required="true" 
+                                    placeholder="Briefly describe your project goals, timelines, or questions..."></textarea>
+                            </div>
+                        </fieldset>
+
+                        <!-- Consent Fieldset -->
+                        <fieldset class="form-fieldset">
+                            <legend class="fieldset-legend">3. Consent</legend>
+
+                            <div class="checkbox-item">
+                                <input 
+                                    type="checkbox" 
+                                    id="privacy-consent" 
+                                    name="consent" 
+                                    required 
+                                    aria-required="true">
+                                <label for="privacy-consent">
+                                    I consent to having my information submitted to respond to this inquiry. <abbr title="required" class="required-mark" aria-label="required">*</abbr>
+                                </label>
+                            </div>
+                        </fieldset>
+
+                        <!-- Form Actions -->
                         <div class="form-actions">
-                            <button type="submit">Send Message</button>
-                            <button type="reset">Clear</button>
+                            <button type="submit" class="btn btn-primary">Submit Inquiry &rarr;</button>
+                            <button type="reset" class="btn btn-secondary">Clear Form</button>
                         </div>
-                    </fieldset>
-                </form>
+
+                    </form>
+                </div>
+
+                <!-- Direct Contact Sidebar -->
+                <aside class="sidebar-box direct-contact-box" aria-labelledby="direct-contact-heading">
+                    <h3 id="direct-contact-heading">Direct Contact Information</h3>
+                    <p>Prefer reaching out directly? Here are my contact channels:</p>
+
+                    <address class="contact-address-card">
+                        <p>
+                            <strong>Email:</strong> <a href="mailto:alex.rivera@example.com">alex.rivera@example.com</a><br>
+                            <strong>Location:</strong> San Francisco, CA &bull; Available Worldwide<br>
+                            <strong>Working Hours:</strong> Mon &ndash; Fri, 9:00 AM &ndash; 5:00 PM PT<br>
+                            <strong>Response Time:</strong> Typically within 24 business hours.
+                        </p>
+                    </address>
+
+                    <div class="info-card">
+                        <h4>Accessibility Consultation</h4>
+                        <p>
+                            All audits include automated scanning, manual screen reader evaluation, and an actionable remediation roadmap within 3 business days.
+                        </p>
+                    </div>
+                </aside>
             </div>
         </section>
 
     </main>
 
-    <hr>
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <nav aria-label="Footer Navigation">
+                <ul class="footer-nav">
+                    <li><a href="#top">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#todo">To-Do App</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; <time datetime="2026">2026</time> Alex Rivera &bull; My First Portfolio Website.</p>
+            <p class="copyright">
+                <small>&copy; <time datetime="2026">2026</time> Alex Rivera. Handcrafted with semantic HTML5, modern CSS3 &amp; vanilla JS.</small>
+            </p>
 
-            <address>
-                <p>
-                    Email: <a href="mailto:alex.rivera@example.com">alex.rivera@example.com</a><br>
-                    Location: San Francisco, California
-                </p>
-            </address>
-
-            <p><a href="#top">Back to top of page &uarr;</a></p>
+            <p class="back-to-top">
+                <a href="#top">Back to top &uarr;</a>
+            </p>
         </div>
     </footer>
 
 </body>
-
 </html>
